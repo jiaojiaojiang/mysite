@@ -1,0 +1,106 @@
+ * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin: 5px;
+            width: 1109px;
+            height: 300px;
+            position: relative;
+            background: rgb(157,207,165);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        /* 轮播图列表 */
+        .box .img-list {
+            width: 6654px;
+            height: 300px;
+
+            display: flex;
+            list-style: none;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .box .img-list img {
+            width: 1109px;
+            height: 300px;
+            vertical-align: middle;
+            /* 防止选中 */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -ms-user-select: none;
+        }
+
+        /* 左右按钮 */
+        .box .btn {
+            width: 30px;
+            height: 60px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0);
+
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+
+            line-height: 60px;
+            text-align: center;
+            font-size: 30px;
+            color: rgb(157,207,165);
+
+            /* 防止选中 */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .box .btn:hover {
+            background-color: rgba(156, 158, 158, 0.3);
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        .box .left-btn {
+            left: 0;
+        }
+
+        .box .right-btn {
+            right: 0;
+        }
+
+        /* 底部圆点 */
+        .box .cir-list {
+            width: 200px;
+            height: 10px;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            margin-left: -100px;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            list-style: none;
+        }
+
+        .box .cir-list li {
+            width: 8px;
+            height: 8px;
+            background-color: aliceblue;
+            border-radius: 50%;
+        }
+
+        .box .cir-list li.change {
+            background-color: rgb(157,207,165);
+            width: 40px;
+            height: 6px;
+            border-radius: 20%;
+            transition: all 0.5s;
+        }

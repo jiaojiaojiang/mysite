@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书推荐系统</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/css/images.css">
+
+</head>
+<body>
+    <div class="book-t">
+            <ul class="nav nav-pills">
+              <li><a href="{% url 'index' %}">图书首页</a></li>
+              <li><a href="#">热门排行</a></li>
+              <li><a href="#">猜你喜欢</a></li>
+              <li><a href="#">随机推荐</a></li>
+              <li><a href="#">我的信息</a></li>
+                <div class="search">
+                    <form action="/result/" method="post">
+                        <input type="text" placeholder="请输入关键字" id="text" name="keyword">
+                        <button type="submit" id="search">搜索</button>
+                        <button type="" id="buy">购物车</button>
+                    </form>
+                </div>
+            </ul>
+
+    </div>
+    <div class="home">
+
+        <div class="h-hd">
+            <div class="head">
+                <span id="show"></span>
+                <span>欢迎您，{{ username }}</span>
+{#                <a href="{% url 'login' %}">登录</a><a href="{% url 'regist' %}">注册</a>#}
+            </div>
+        </div>
+        <div class="h-md">
+            <div class="box" id="box">
+        <!-- 轮播图片列表 -->
+            <ul class="img-list" id="imgList">
+            <li><img src="../static/images/1.png" alt="" draggable="false"></li>
+            <li><img src="../static/images/2.png" alt="" draggable="false"></li>
+            <li><img src="../static/images/3.JPG" alt="" draggable="false"></li>
+            <li><img src="../static/images/4.JPG" alt="" draggable="false"></li>
+            <li><img src="../static/images/5.JPG" alt="" draggable="false"></li>
+            <li><img src="../static/images/1.png" alt="" draggable="false"></li>
+        </ul>
+        <div class="left-btn btn" id="leftBtn">&lt;</div>
+        <div class="right-btn btn" id="rightBtn">&gt;</div>
+        <!-- 底部圆点列表 -->
+        <ul class="cir-list" id="cirList">
+            <li class="change"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+        </div>
+        <div class="h-bt">
+            <div class="bt-f">
+                <div class="title">
+                    <div class="double">文学类</div>
+                </div>
+                <div class="con">
+                    {% for data in lists1 %}
+                        {% if forloop.counter < 10 %}
+                            <div class="con-c">
+                            <div class="c-tr"></div>
+                            <form method="post" action="">
+                            <div class="b-name icoFontlist"><a class="names" href="{{ data.bookid }}">{{ data.bookname }}</a></div> </form>
+                            <div class="b-man">{{ data.author }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                    </div>
+
+                </div>
+            <div class="bt-s">
+                <div class="title">
+                    <div class="double">哲学类</div>
+                </div>
+                <div class="con">
+                    {% for data in lists1 %}
+                        {% if forloop.counter < 461 and forloop.counter > 451 %}
+                            <div class="con-c">
+                            <div class="c-tr"></div>
+                            <div class="b-name icoFontlist"><a class="names" href="{{ data.bookid }}">{{ data.bookname}}</a></div>
+                            <div class="b-man">{{ data.author }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                    </div>
+
+            </div>
+            <div class="bt-t">
+                <div class="title">
+                    <div class="double">教育类</div>
+                </div>
+                <div class="con">
+                    {% for data in lists1 %}
+                        {% if forloop.counter < 823 and forloop.counter > 813 %}
+                            <div class="con-c">
+                            <div class="c-tr"></div>
+                            <div class="b-name icoFontlist"><a class="names" href="{{ data.bookid }}">{{ data.bookname}}</a></div>
+                            <div class="b-man">{{ data.author }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../static/js/home.js"></script>
+    <script type="text/javascript" src="../static/js/images.js"></script>
+</body>
+</html>

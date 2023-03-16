@@ -1,0 +1,36 @@
+{#login.html#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+<div style="text-align: center">
+    <div class="login">
+        <div class="l-left"></div>
+        <div class="l-right">
+            <div class="l-title">Book Recomandation Login</div>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}<br>
+        <span>若无账号，请点击</span><a href="{% url 'regist' %}">注册</a><br><br>
+        <label for="name">用户名</label>
+        <input id="name" name="username" type="text" placeholder="请输入用户名">
+        <br>
+        <label class="mima" for="password">密码</label>
+        <input style="margin-top: 20px" id="password" name="password" type="password" placeholder="请输入密码">
+        <br><br>
+        <button type="submit" id="submit">登录</button>
+    </form></div>
+        {% if messages %}
+            <script>
+                {% for msg in messages %}
+                    alert('{{ msg.message }}');
+                {% endfor %}
+            </script>
+        {% endif %}
+</div>
+</div>
+</body>
+</html>

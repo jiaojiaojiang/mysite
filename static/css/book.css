@@ -1,0 +1,178 @@
+.nav {
+    border:1px solid rgb(133, 195, 142);
+    background-color: white;
+    margin: auto;
+    width: 75%;
+}
+
+.nav>li>a {
+    font-weight: bold;
+    font-size: 15px;
+    color:rgb(133, 195, 142);
+}
+.search {
+    float: right;
+    margin: 8px 20px;
+}
+.search button {
+    height: 25px;
+}
+#search,#buy {
+    background-color: rgb(133, 195, 142);
+    color: white;
+    border:transparent;
+    border-radius: 3px;
+    width: 60px;
+}
+.book-m {
+    border:1px solid rgb(133, 195, 142);
+    background-color: white;
+    margin: 25px auto;
+    width: 75%;
+}
+.b-cover {
+    float: left;
+    height: 360px;
+    width: 270px;
+    margin: 20px;
+    margin-right: 10px;
+}
+.b-content {
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 820px;
+}
+.m-left {
+    height: 400px;
+}
+.bdes {
+    color: rgb(102, 102, 102);
+    line-height: 25px;
+    margin: 20px 0 20px 0;
+    font-size: 13px;
+    height: 100px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.bname {
+    color: rgb(86, 86, 86);
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.bauthor {
+    color: rgb(102, 102, 102);
+    margin-top: 20px;
+    font-size: 15px;
+}
+.btype{
+    color: rgb(102, 102, 102);
+    font-size: 12px;
+}
+.bprice {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(17, 170, 138);
+    margin: 10px 0;
+}
+#jiagou {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: rgb(17, 170, 138);
+    color:white;
+    height: 40px;
+    width: 100px;
+    float: left;
+}
+#pingfen{
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: rgb(17, 170, 138);
+    color:white;
+    height: 40px;
+    width: 50px;
+    float: left;
+    margin-left: 10px;
+}
+
+.container {
+    margin-right: 0px;
+}
+.shoucang {
+    float: left;
+}
+.shoucang {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: rgb(17, 170, 138);
+    color:white;
+    height: 40px;
+    width: 40px;
+    float: left;
+    margin-left: 10px;
+}
+#shoucang {
+    font-size: 20px;
+    margin-left: 10px;
+    line-height: 40px;
+    margin: auto;
+}
+
+.shoucang:hover {
+    background-color: white;
+    color: rgb(17, 170, 138);
+}
+.book-p {
+    background-image: linear-gradient(90deg, rgb(17, 170, 138), rgb(133, 195, 142) , white);
+    margin: auto;
+    height: 40px;
+    width: 75%;
+}
+.book-p div{
+    float: left;
+    color: white;
+    line-height: 40px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.book-b {
+    background-image: linear-gradient(-90deg, rgb(17, 170, 138), rgb(133, 195, 142) , white);
+    margin: 20px auto;
+    margin-bottom: 0;
+    height: 40px;
+    width: 75%;
+}
+.book-bb {
+    border: 1px solid rgb(17, 170, 138);
+    height: 360px;
+    margin: auto;
+    width: 75%;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.book-b div {
+    color: white;
+    line-height: 40px;
+    font-weight: bold;
+    margin-right: 20px;
+    float: right;
+    font-size: 17px;
+}
+.book-bb div {
+    float: left;
+    height: 300px;
+    width: 225px;
+    border: 1px solid rgb(17, 170, 138);
+    margin: 29px;
+}
+.book-bb div:hover {
+    border: transparent;
+    box-shadow: 10px 5px 0px rgb(133, 195, 142,.3);
+}
+.book-bb div:first-child {
+    margin-left: 32px;
+}

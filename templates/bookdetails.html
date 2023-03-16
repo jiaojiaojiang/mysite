@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书详情页</title>
+    <link rel="stylesheet" href="../../static/css/book.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.css">
+</head>
+<body>
+    <div class="bookdetails">
+        <div class="book-t">
+            <ul class="nav nav-pills">
+              <li><a href="{% url 'index' %}">图书首页</a></li>
+              <li><a href="#">热门排行</a></li>
+              <li><a href="#">猜你喜欢</a></li>
+              <li><a href="#">随机推荐</a></li>
+              <li><a href="#">我的信息</a></li>
+                <div class="search">
+                    <input type="text" placeholder="请输入关键字" name="keyword">
+                    <button type="submit" id="search">搜索</button>
+                    <button type="submit" id="buy">购物车</button>
+                </div>
+            </ul>
+        </div>
+        <div class="book-m">
+            <div class="m-left">
+                {% for data in wenxue %}
+                <div class="b-cover"><img src="../../static/images/bookimg/{{ data.bookid }}.jpg" width="270" height="360"></div>
+                <div class="b-content">
+                        <div class="bname">{{ data.bookname }}</div>
+                        <div class="bauthor">{{ data.author }}</div>
+                        <div class="bdes" data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="{{ data.des }}">
+                            {{ data.des }}
+                        </div>
+                        <div class="btype">所属分类：{{ data.type }}</div>
+                        <div class="bprice">￥{{ data.price }}</div>
+                        <button type="submit" id="jiagou">加入购物车</button>
+                        <button type="submit" id="pingfen">评分</button>
+                        <button class="shoucang"><div class="glyphicon glyphicon-heart" id="shoucang"></div></button>
+                        <div></div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="m-right"></div>
+        </div>
+        <div class="book-p">
+            <div>图书均分：9.8</div>
+            <div>已有10人评分</div>
+        </div>
+        <div class="book-b">
+            <div>为您推荐</div>
+        </div>
+        <div class="book-bb">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../../static/js/bootstrap.js"></script>
+    <script>
+    $(function (){
+        $("[data-toggle='popover']").popover();
+    });
+      let binaryData = [];
+        binaryData.push(document.getElementById('img').src);
+        document.getElementById('img').src = window.URL.createObjectURL(new Blob(binaryData))+'.jpg';
+        console.log(window.URL.createObjectURL(new Blob(binaryData)))
+    </script>
+</body>
+</html>

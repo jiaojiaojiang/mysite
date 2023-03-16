@@ -1,0 +1,61 @@
+.null {
+    margin: 50px 520px;
+    color: rgb(133, 195, 142);
+    font-size: 25px;
+    font-weight: bold;
+}
+li {
+    list-style:none;
+
+}
+.book-m {
+    display: flex;
+    flex-direction: column;
+}
+.r-book {
+    cursor: pointer;
+    margin: 20px 40px;
+
+}
+.r-left,
+.r-right {
+    float: left;
+}
+.r-bimg{
+    width: 135px;
+    height: 180px;
+    margin: 20px;
+}
+.r-right {
+    margin:10px;
+    width: 830px;
+    border-bottom: 1px solid rgb(102, 102, 102,0.2);
+}
+.r-bname{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    color: rgb(86, 86, 86);
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.r-bauthor {
+    color: rgb(102, 102, 102);
+    margin-top: 5px;
+    font-size: 15px;
+}
+.r-des{
+    color: rgb(102, 102, 102);
+    line-height: 25px;
+    margin: 10px 0 20px 0;
+    font-size: 13px;
+    height: 100px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询结果</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/css/book.css">
+    <link rel="stylesheet" href="../static/css/result.css">
+</head>
+<body>
+    <div class="book-t">
+            <ul class="nav nav-pills">
+              <li><a href="{% url 'index' %}">图书首页</a></li>
+              <li><a href="#">热门排行</a></li>
+              <li><a href="#">猜你喜欢</a></li>
+              <li><a href="#">随机推荐</a></li>
+              <li><a href="#">我的信息</a></li>
+                <div class="search">
+                    <form action="/result/" method="post">
+                        <input type="text" placeholder="请输入关键字" id="text" name="keyword">
+                        <button type="submit" id="search">搜索</button>
+                        <button type="" id="buy">购物车</button>
+                    </form>
+                </div>
+            </ul>
+    </div>
+    <div class="book-m">
+        <div class="null" id="bnull">{{ note }}</div>
+        <div id="rbook">
+
+        </div>
+    </div>
+    <script>
+        var div1=document.getElementById("rbook")
+        var div2=document.getElementById("bnull")
+        {% for data in book %}
+            div2.style.margin = '0'
+            a='<li class="r-book"><div class="r-left"><div class="r-bimg"><img src="../../static/images/bookimg/'
+            b='.jpg" width="135" height="180"></div></div><div class="r-right"><div class="r-bname">'
+            c='</div><div class="r-bauthor">'
+            d='</div><div class="r-des">'
+            e= '</div></div></li>'
+            f=a + '{{ data.bookid }}' + b + '{{ data.bookname }}' + c + '{{ data.author }}' + d + '{{ data.des }}' + e
+            div1.innerHTML+=f
+        {% endfor %}
+    </script>
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+
+</body>
+</html>
