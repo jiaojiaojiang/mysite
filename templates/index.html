@@ -15,9 +15,9 @@
               <li><a href="#">热门排行</a></li>
               <li><a href="#">猜你喜欢</a></li>
               <li><a href="#">随机推荐</a></li>
-              <li><a href="#">我的信息</a></li>
+              <li><a href="/myinfo/">我的信息</a></li>
                 <div class="search">
-                    <form action="/result/" method="post">
+                    <form action="/result/" method="get">
                         <input type="text" placeholder="请输入关键字" id="text" name="keyword">
                         <button type="submit" id="search">搜索</button>
                         <button type="" id="buy">购物车</button>
@@ -31,8 +31,11 @@
         <div class="h-hd">
             <div class="head">
                 <span id="show"></span>
-                <span>欢迎您，{{ username }}</span>
-{#                <a href="{% url 'login' %}">登录</a><a href="{% url 'regist' %}">注册</a>#}
+                {% if username != None %}
+                    <span>欢迎您，{{ username }}</span>
+                {% else %}
+                    <a href="{% url 'login' %}">登录</a><a href="{% url 'regist' %}">注册</a>
+                {% endif %}
             </div>
         </div>
         <div class="h-md">

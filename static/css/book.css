@@ -59,6 +59,11 @@
     -webkit-box-orient: vertical;
 }
 .bname {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     color: rgb(86, 86, 86);
     margin-top: 10px;
     font-size: 30px;
@@ -175,4 +180,7 @@
 }
 .book-bb div:first-child {
     margin-left: 32px;
+}
+.book-b>a {
+    margin: 0 10px;
 }

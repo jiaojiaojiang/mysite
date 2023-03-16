@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <link rel="stylesheet" href="../../static/css/book.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.css">
+</head>
+<body>
+    <div class="bookdetails">
+        <div class="book-t">
+            <ul class="nav nav-pills">
+              <li><a href="{% url 'index' %}">图书首页</a></li>
+              <li><a href="#">热门排行</a></li>
+              <li><a href="#">猜你喜欢</a></li>
+              <li><a href="#">随机推荐</a></li>
+              <li><a href="/myinfo/">我的信息</a></li>
+                <div class="search">
+                    <form action="/result/" method="get">
+                        <input type="text" placeholder="请输入关键字" id="text" name="keyword">
+                        <button type="submit" id="search">搜索</button>
+                        <button type="" id="buy">购物车</button>
+                    </form>
+                </div>
+            </ul>
+        </div>
+        <div class="book-m">
+            <div> < 个人信息修改</div>
+            <form action="/myinfo/" method="post">
+            <label for="name">用户名</label>
+                {{ username }}
+            <br>
+            <label class="mima" for="password">密码</label>
+            <input style="margin-top: 20px" id="password" name="password" type="password" placeholder="请输入密码"><br>
+                <label class="youxiang" for="email">邮箱</label>
+             <input style="margin-top: 20px" id="email" name="email" type="email" placeholder="请输入邮箱">
+            <br><br>
+            <button type="submit" id="submit">修改</button>
+    </form>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="../../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../../static/js/bootstrap.js"></script>
+</body>
+</html>

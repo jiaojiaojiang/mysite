@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^index/$', views.index,name='index'),
     url(r'^index/(.\d+)/',views.book),
     url(r'^result/$', views.result,name='result'),
-
+    url(r'^myinfo/$', views.myinfo),
+    # url(r'^result/([0-9]+)/',views.result,name='result')
 ]

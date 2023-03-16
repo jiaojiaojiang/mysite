@@ -10,6 +10,7 @@ import urllib
 import urllib.parse
 from django.shortcuts import redirect
 from flask import request
+from django.core.paginator import Paginator
 
 # Create your views here.
 class UserForm(forms.Form):
@@ -61,6 +62,7 @@ def index(request):
     lists2 = models.ZX.objects.all()
     lists3 = models.JY.objects.all()
     username = request.session.get('username')
+
     if username is None:
         return render(request, 'index.html',{'lists1': lists1, 'lists2': lists2, 'lists3': lists3, 'username': None})
     else:
@@ -70,15 +72,26 @@ def index(request):
 
 def book(request, id):
     bid = int(id)
-    print(bid)
-    wenxue = models.WX.objects.filter(bookid = bid)
+    wenxue = models.Libraries.objects.filter(bookid = bid)
     return render(request, 'bookdetails.html', {"wenxue": wenxue})
 
-def result(request):
-    if request.method == 'POST':
-        key = request.POST.get('keyword')
-        book = models.Libraries.objects.filter(bookname__contains = str(key))
-        print(book)
-        return render(request, "result.html", {"book": book})
 
-    return render(request,"result.html")
+def result(request):
+    key = request.GET.get('keyword')
+    if len(key) > 0:
+        book = models.Libraries.objects.filter(bookname__contains = str(key)).order_by('bookid')
+        paginator = Paginator(book, 20)
+        p = request.GET.get('page')
+        num_p = request.GET.get('page', 1)
+        page = paginator.get_page(int(num_p))
+    else:
+        book = models.Libraries.objects.all().order_by('bookid')
+        paginator = Paginator(book,100)
+        p = request.GET.get('page')
+        num_p = request.GET.get('page',1)
+        page = paginator.get_page(int(num_p))
+    return render(request, "result.html", locals())
+
+def myinfo(request):
+    username = request.session.get('username')
+    return render(request, "myinfo.html",locals())

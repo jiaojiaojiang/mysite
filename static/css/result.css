@@ -59,3 +59,19 @@ li {
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
+#b-bot {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    color:black;
+    font-size: 14px;
+    font-weight: normal;
+    float: right;
+}
+#cpage {
+    margin: 40px 0 0 60px;
+    letter-spacing: 1px;
+    color: rgb(102, 102, 102);
+}
